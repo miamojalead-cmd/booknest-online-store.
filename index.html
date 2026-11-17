@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover, buy and read your favourite books online at BookNest.">
+  <title>BookNest | Your Digital Bookstore</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="#">BookNest<span>.</span></a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#books">Books</a>
+      <a href="#about">About</a>
+    </nav>
+    <button class="cart-button" onclick="toggleCart()">
+      Cart (<span id="cart-count">0</span>)
+    </button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div>
+        <p class="eyebrow">YOUR NEXT CHAPTER STARTS HERE</p>
+        <h1>Discover stories.<br>Read without limits.</h1>
+        <p class="hero-copy">
+          Explore inspiring books, discover new authors and build
+          your own digital library.
+        </p>
+        <a class="primary-button" href="#books">Explore books</a>
+      </div>
+      <div class="hero-art">
+        <div class="hero-book">BOOKS<br>OPEN<br>WORLDS.</div>
+      </div>
+    </section>
+
+    <section class="section" id="books">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">OUR COLLECTION</p>
+          <h2>Explore our books</h2>
+        </div>
+        <input id="search" type="search"
+          placeholder="Search books or authors..."
+          oninput="renderBooks()">
+      </div>
+
+      <div class="filters">
+        <button class="filter active" onclick="filterBooks('All', this)">All</button>
+        <button class="filter" onclick="filterBooks('Business', this)">Business</button>
+        <button class="filter" onclick="filterBooks('Fiction', this)">Fiction</button>
+        <button class="filter" onclick="filterBooks('Personal Growth', this)">Personal Growth</button>
+      </div>
+
+      <div class="book-grid" id="book-grid"></div>
+    </section>
+
+    <section class="banner" id="about">
+      <p class="eyebrow">READ. LEARN. GROW.</p>
+      <h2>A whole library in your pocket.</h2>
+      <p>Find your next favourite book and enjoy reading wherever you are.</p>
+    </section>
+  </main>
+
+  <aside class="cart-panel" id="cart-panel">
+    <div class="cart-heading">
+      <h2>Your cart</h2>
+      <button onclick="toggleCart()">✕</button>
+    </div>
+    <div id="cart-items"></div>
+    <div class="cart-total">
+      <strong>Total</strong>
+      <strong id="cart-total">TZS 0</strong>
+    </div>
+    <button class="primary-button full" onclick="checkout()">Continue to checkout</button>
+    <p class="small-note">Demo checkout only. No real payment is collected.</p>
+  </aside>
+
+  <div class="modal" id="reader-modal">
+    <div class="modal-content">
+      <button class="close" onclick="closeReader()">✕</button>
+      <p class="eyebrow">BOOK PREVIEW</p>
+      <h2 id="reader-title"></h2>
+      <div id="reader-text" class="reader-text"></div>
+      <p class="small-note">This is a sample preview, not the full copyrighted book.</p>
+    </div>
+  </div>
+
+  <footer>
+    <a class="logo" href="#">BookNest<span>.</span></a>
+    <p>© 2026 BookNest. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
