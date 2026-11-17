@@ -1,0 +1,320 @@
+
+:root {
+  --green: #183c32;
+  --cream: #f7f4ed;
+  --gold: #c89c58;
+  --ink: #242720;
+  --muted: #77786f;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: Arial, sans-serif;
+  background: #fff;
+  color: var(--ink);
+}
+
+.header {
+  height: 76px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: white;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: 800;
+  text-decoration: none;
+  color: var(--green);
+}
+
+.logo span { color: var(--gold); }
+
+nav { display: flex; gap: 30px; }
+
+nav a {
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 14px;
+}
+
+button, a { cursor: pointer; }
+
+.cart-button, .primary-button {
+  border: 0;
+  background: var(--green);
+  color: white;
+  padding: 13px 21px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.hero {
+  min-height: 490px;
+  padding: 75px 9%;
+  background: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.eyebrow {
+  color: #a77a3e;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+
+.hero h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(42px, 6vw, 68px);
+  line-height: 1.08;
+  color: var(--green);
+  margin-bottom: 22px;
+}
+
+.hero-copy {
+  max-width: 440px;
+  line-height: 1.8;
+  color: var(--muted);
+  margin-bottom: 30px;
+}
+
+.hero-art {
+  width: 260px;
+  height: 340px;
+  background: #d9c6a4;
+  display: grid;
+  place-items: center;
+  transform: rotate(4deg);
+  border-radius: 5px;
+  box-shadow: 20px 20px 0 #e9dfce;
+}
+
+.hero-book {
+  background: var(--green);
+  color: #f8e9c9;
+  height: 280px;
+  width: 190px;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  font-family: Georgia, serif;
+  font-size: 28px;
+  line-height: 1.5;
+  box-shadow: inset 8px 0 #102b24;
+}
+
+.section { padding: 80px 8%; }
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+h2 {
+  font-family: Georgia, serif;
+  font-size: 34px;
+  color: var(--green);
+}
+
+#search {
+  padding: 13px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 260px;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.filter {
+  padding: 10px 17px;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 30px;
+}
+
+.filter.active {
+  background: var(--green);
+  color: white;
+  border-color: var(--green);
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.book-card {
+  border: 1px solid #eee;
+  padding: 13px;
+  border-radius: 7px;
+  transition: transform .2s;
+}
+
+.book-card:hover { transform: translateY(-5px); }
+
+.book-cover {
+  height: 210px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 15px;
+  color: white;
+  font-family: Georgia, serif;
+  font-size: 23px;
+  line-height: 1.3;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.book-card h3 { font-size: 17px; margin-bottom: 7px; }
+.author { color: var(--muted); font-size: 13px; margin-bottom: 10px; }
+.price { font-weight: bold; color: var(--green); margin-bottom: 12px; }
+
+.card-actions { display: flex; gap: 8px; }
+
+.card-actions button {
+  flex: 1;
+  padding: 10px 5px;
+  font-size: 12px;
+  border-radius: 4px;
+  border: 1px solid var(--green);
+}
+
+.add-button { background: var(--green); color: white; }
+.preview-button { background: white; color: var(--green); }
+
+.banner {
+  margin: 20px 8% 80px;
+  background: var(--green);
+  color: white;
+  text-align: center;
+  padding: 65px 20px;
+  border-radius: 8px;
+}
+
+.banner h2 { color: white; margin-bottom: 15px; }
+.banner p:last-child { color: #d9dfd8; line-height: 1.7; }
+
+footer {
+  padding: 35px 8%;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.cart-panel {
+  position: fixed;
+  right: -420px;
+  top: 0;
+  width: min(400px, 100%);
+  height: 100vh;
+  background: white;
+  z-index: 30;
+  padding: 25px;
+  box-shadow: -5px 0 30px #0002;
+  transition: right .3s;
+  overflow-y: auto;
+}
+
+.cart-panel.open { right: 0; }
+
+.cart-heading, .cart-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.cart-heading button, .close {
+  background: none;
+  border: 0;
+  font-size: 22px;
+}
+
+.cart-line {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+  gap: 10px;
+}
+
+.cart-line button { border: 0; background: none; color: #a33; }
+
+.full { width: 100%; text-align: center; }
+.small-note { font-size: 12px; color: var(--muted); margin-top: 14px; line-height: 1.6; }
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #0009;
+  z-index: 40;
+  padding: 20px;
+  place-items: center;
+}
+
+.modal.show { display: grid; }
+
+.modal-content {
+  background: white;
+  padding: 35px;
+  border-radius: 8px;
+  width: min(550px, 100%);
+  max-height: 85vh;
+  overflow: auto;
+  position: relative;
+}
+
+.close { position: absolute; right: 20px; top: 15px; }
+.reader-text { line-height: 1.9; margin-top: 20px; white-space: pre-line; }
+
+@media (max-width: 850px) {
+  .book-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero { padding: 55px 7%; }
+}
+
+@media (max-width: 600px) {
+  .header { padding: 0 5%; }
+  nav { display: none; }
+  .hero { flex-direction: column; align-items: flex-start; }
+  .hero-art { align-self: center; }
+  .section { padding: 55px 5%; }
+  .section-heading { align-items: flex-start; flex-direction: column; }
+  #search { width: 100%; }
+  .book-grid { gap: 12px; }
+  .book-cover { height: 165px; font-size: 18px; }
+  .card-actions { flex-direction: column; }
+  footer { flex-direction: column; }
+}
